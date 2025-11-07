@@ -21,9 +21,9 @@ layers:
   - [▽, APP, '', F11, F12, PG DN, ',', KP 1, KP 2, KP 3, '.', KP ENTER]
   - [▽, ▽, {type: held}, ▽, KP 0, KP 0]
   SYSTEM:
-  - [BT CLR, BT 0, BT 1, BT 2, BT 3, '', '', '', VOL UP, '', '', BT CLR ALL]
-  - ['&bootloader', '', '', '', '', 'CTRL ALT DEL', '', PREV, PP, NEXT, '', '&bootloader']
-  - [{type: held}, '', '', '', '', '', '', '', VOL DN, '', '', '&sys_reset']
+  - [BT CLR, BT 0, BT 1, BT 2, BT 3, RGB TOG, '', '', VOL UP, '', '', BT CLR ALL]
+  - ['&bootloader', RGB EFF, RGB HUI, RGB SAI, RGB BRI, 'CTRL ALT DEL', '', PREV, PP, NEXT, '', '&bootloader']
+  - [{type: held}, RGB EFR, RGB HUD, RGB SAD, RGB BRD, '', '', '', VOL DN, '', '', '&sys_reset']
   - ['', OUT USB, OUT BLE, '', '', '']
   MOUSE:
   - [▽, ▽, {type: held}, ▽, ▽, ▽, '', PG UP, '&mmv MOVE_UP', PG DN, '', '']
@@ -31,10 +31,10 @@ layers:
   - [▽, ▽, ▽, ▽, ▽, ▽, '', '&mkp LCLK', '&mkp MCLK', '&mkp RCLK', '', '']
   - [▽, ▽, '', ▽, '&msc SCRL_UP', '&msc SCRL_DOWN']
   NAV:
-  - [▽, Gui+1, Gui+2, Gui+3, Gui+4, ▽, '', '', '', '', '', '']
-  - [▽, Gui+5, Gui+6, Gui+7, Gui+8, ▽, LEFT ARROW, DOWN ARROW, UP ARROW, RIGHT ARROW, '', '']
+  - [▽, '', '', '', '', ▽, '', '', '', '', '', '']
+  - [▽, LGUI, LSHIFT, LALT, LCTRL, ▽, LEFT ARROW, DOWN ARROW, UP ARROW, RIGHT ARROW, '', '']
   - [▽, ▽, ▽, ▽, ▽, ▽, '', '', '', '', '', '']
-  - [{type: held}, ▽, ▽, ▽, '', '']
+  - ['', ▽, ▽, ▽, '', '']
 combos:
   - {p: [1, 2], k: '~', l: [BASE]}
   - {p: [15, 16], k: '(', l: [BASE]}
