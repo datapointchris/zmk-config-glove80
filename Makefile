@@ -18,10 +18,16 @@ GLOVE80_DRAWER_YAML := glove80_keymap.yaml
 GLOVE80_SVG := glove80_keymap.svg
 GLOVE80_JPG := glove80_keymap.jpg
 
+PIANTOR_KEYMAP := $(CONFIG_DIR)/piantor_pro_bt.keymap
+PIANTOR_LAYOUT := piantor_layout.json
+PIANTOR_DRAWER_YAML := piantor_keymap.yaml
+PIANTOR_SVG := piantor_keymap.svg
+PIANTOR_JPG := piantor_keymap.jpg
+
 TEST_DIR := $(TESTS_DIR)
 PYTEST_FILE := $(TESTS_DIR)/test_align_keymap.py
 
-.PHONY: help align-glove80 align-corne align sync sync-glove80 sync-corne draw draw-glove80 draw-corne test test-verbose build build-glove80 build-corne clean
+.PHONY: help align-glove80 align-corne align-piantor align sync sync-glove80 sync-corne sync-piantor draw draw-glove80 draw-corne draw-piantor test test-verbose build build-glove80 build-corne build-piantor clean
 
 # Default target - show help
 help:
@@ -29,20 +35,24 @@ help:
 	@echo "==================="
 	@echo ""
 	@echo "Workflows:"
-	@echo "  sync           - align + draw + build (both keyboards)"
+	@echo "  sync           - align + draw + build (all keyboards)"
 	@echo "  sync-glove80   - align + draw + build (Glove80)"
 	@echo "  sync-corne     - align + draw + build (Corne)"
+	@echo "  sync-piantor   - align + draw + build (Piantor)"
 	@echo ""
 	@echo "Individual Tasks:"
-	@echo "  align          - Align both keymaps"
+	@echo "  align          - Align all keymaps"
 	@echo "  align-glove80  - Align Glove80 keymap"
 	@echo "  align-corne    - Align Corne keymap"
-	@echo "  draw           - Generate both SVGs from YAML"
+	@echo "  align-piantor  - Align Piantor keymap"
+	@echo "  draw           - Generate all SVGs from YAML"
 	@echo "  draw-glove80   - Generate Glove80 SVG from YAML"
 	@echo "  draw-corne     - Generate Corne SVG from YAML"
-	@echo "  build          - Build both firmwares"
+	@echo "  draw-piantor   - Generate Piantor SVG from YAML"
+	@echo "  build          - Build all firmwares"
 	@echo "  build-glove80  - Build Glove80 firmware"
 	@echo "  build-corne    - Build Corne firmware"
+	@echo "  build-piantor  - Build Piantor firmware"
 	@echo "  test           - Run test suite"
 	@echo "  test-verbose   - Run tests with verbose output"
 	@echo "  clean          - Remove temp files and UF2s"
@@ -55,7 +65,11 @@ align-corne:
 	$(PYTHON) $(ALIGN_SCRIPT) --keymap $(CORNE_KEYMAP) --layout $(CORNE_LAYOUT)
 	@echo "✅ Corne keymap aligned"
 
-align: align-glove80 align-corne
+align-piantor:
+	$(PYTHON) $(ALIGN_SCRIPT) --keymap $(PIANTOR_KEYMAP) --layout $(PIANTOR_LAYOUT)
+	@echo "✅ Piantor keymap aligned"
+
+align: align-glove80 align-corne align-piantor
 
 test:
 	@uv run pytest $(PYTEST_FILE) -v
@@ -63,17 +77,21 @@ test:
 test-verbose:
 	@uv run pytest $(PYTEST_FILE) -vvv --tb=long
 
-build: build-glove80 build-corne
+build: build-glove80 build-corne build-piantor
 
 build-glove80:
-	./build.sh glove80
+	./build glove80
 	@echo "✅ Glove80 firmware built"
 
 build-corne:
-	./build.sh corne
+	./build corne
 	@echo "✅ Corne firmware built"
 
-draw: draw-glove80 draw-corne
+build-piantor:
+	./build piantor
+	@echo "✅ Piantor firmware built"
+
+draw: draw-glove80 draw-corne draw-piantor
 
 draw-glove80:
 	keymap -c keymap_drawer.config.yaml draw $(GLOVE80_DRAWER_YAML) > $(GLOVE80_SVG)
@@ -86,6 +104,12 @@ draw-corne:
 	@echo "✅ $(CORNE_SVG)"
 	magick $(CORNE_SVG) $(CORNE_JPG)
 	@echo "✅ $(CORNE_JPG)"
+
+draw-piantor:
+	keymap -c keymap_drawer.config.yaml draw $(PIANTOR_DRAWER_YAML) > $(PIANTOR_SVG)
+	@echo "✅ $(PIANTOR_SVG)"
+	magick $(PIANTOR_SVG) $(PIANTOR_JPG)
+	@echo "✅ $(PIANTOR_JPG)"
 
 clean:
 	find . -name "*.pyc" -delete 2>/dev/null || true
@@ -103,3 +127,6 @@ sync-glove80: align-glove80 draw-glove80 build-glove80
 
 sync-corne: align-corne draw-corne build-corne
 	@echo "✅ Corne sync complete"
+
+sync-piantor: align-piantor draw-piantor build-piantor
+	@echo "✅ Piantor sync complete"
