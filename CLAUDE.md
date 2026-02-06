@@ -8,7 +8,7 @@ All ZMK repos live under `~/code/zmk/`. See `~/code/zmk/shared/CLAUDE.md` for sh
 
 | File | Purpose |
 |---|---|
-| `config/glove80.keymap` | Keymap with all 7 layers, combos, `magic` behavior, RGB macro |
+| `config/glove80.keymap` | Keymap with 5 layers, combos, `magic` behavior, RGB macro |
 | `config/glove80.conf` | Minimal config (pointing + smooth scrolling) |
 | `config/west.yml` | West manifest — pulls zmk-shared + **MoErgo ZMK fork** |
 | `build.yaml` | Build matrix: glove80_lh, glove80_rh |
@@ -24,13 +24,13 @@ All ZMK repos live under `~/code/zmk/`. See `~/code/zmk/shared/CLAUDE.md` for sh
 
 ## Layers Used
 
-Uses all 7 shared layers: BASE (0), DEVLEFT (1), DEVRIGHT (2), NPAD (3), SYSTEM (4), MOUSE (5), NAV (6).
+Uses all 5 shared layers: BASE (0), DEVLEFT (1), NPAD (2), SYSTEM (3), NAV (4).
 
 ## Glove80-Specific Behaviors
 
 - `magic`: hold-tap — hold=`&mo SYSTEM`, tap=`&rgb_ug_status_macro`
 - `rgb_ug_status_macro`: triggers `&rgb_ug RGB_STATUS`
-- SYSTEM layer has full RGB controls (`RGB_SPI/SPD`, `RGB_SAI/SAD`, `RGB_HUI/HUD`, `RGB_BRI/BRD`, `RGB_EFF`, `RGB_TOG`)
+- SYSTEM layer has full RGB controls (`RGB_EFF/EFR`, `RGB_HUI/HUD`, `RGB_SAI/SAD`, `RGB_BRI/BRD`, `RGB_TOG`)
 
 ## Guardrails
 

@@ -15,13 +15,9 @@ ZMK firmware configuration for the MoErgo Glove80 ergonomic keyboard.
 |---|---|---|
 | 0 | BASE | QWERTY + home row mods + 8 combos + number row + F-keys |
 | 1 | DEVLEFT | Programming symbols (left hand) |
-| 2 | DEVRIGHT | Programming symbols (right hand) + arrow nav (left hand) |
-| 3 | NPAD | Numpad (right) + media/nav (left) + brightness controls |
-| 4 | SYSTEM | Bluetooth, RGB controls, bootloader, media |
-| 5 | MOUSE | Mouse movement, scrolling, clicks |
-| 6 | NAV | Arrow keys + sticky modifiers |
-
-Uses all 7 shared layers.
+| 2 | NPAD | Number pad (right) + nav (left) |
+| 3 | SYSTEM | Bluetooth, RGB controls, bootloader, media |
+| 4 | NAV | Arrow keys + F1-F12 + sticky modifiers |
 
 ## Notable
 
