@@ -8,10 +8,10 @@ All ZMK repos live under `~/code/zmk/`. See `~/code/zmk/shared/CLAUDE.md` for sh
 
 | File | Purpose |
 |---|---|
-| `config/glove80.keymap` | Keymap with 5 layers, combos, `magic` behavior, RGB macro |
+| `config/glove80.keymap` | Keymap with 7 layers, combos, `magic` behavior, RGB macro |
 | `config/glove80.conf` | Minimal config (pointing + smooth scrolling) |
 | `config/west.yml` | West manifest — pulls zmk-shared + **MoErgo ZMK fork** |
-| `build.yaml` | Build matrix: glove80_lh, glove80_rh |
+| `build.yaml` | Build matrix: glove80_lh/rh × macOS/Linux (OS-conditional) |
 | `Makefile` | align, draw, build, sync, clean |
 | `keymap_drawer.config.yaml` | Keymap-drawer config for this keyboard |
 | `keymap_align.toml` | Keymap-align config |
@@ -24,7 +24,7 @@ All ZMK repos live under `~/code/zmk/`. See `~/code/zmk/shared/CLAUDE.md` for sh
 
 ## Layers Used
 
-Uses all 5 shared layers: BASE (0), DEVLEFT (1), NPAD (2), SYSTEM (3), NAV (4).
+Uses all 7 shared layers: BASE (0), COLEMAK (1), DEVLEFT (2), NPAD (3), SYSTEM (4), NAV (5), WM (6).
 
 ## Glove80-Specific Behaviors
 

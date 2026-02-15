@@ -4,21 +4,28 @@ layers:
   - [F1, F2, F3, F4, F5, F6, F7, F8, F9, F10]
   - ['=', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-']
   - [TAB, Q, W, E, R, T, Y, U, I, O, P, \]
-  - [ESC, {t: A, h: LGUI}, {t: S, h: LSHIFT}, {t: D, h: LALT}, {t: F, h: LCTRL}, G, H, {t: J, h: RCTRL}, {t: K, h: RALT}, {t: L, h: RSHIFT}, {t: ;, h: RGUI}, '''']
+  - [ESC, {t: A, h: GUI}, {t: S, h: Alt}, {t: D, h: Shift}, {t: F, h: Ctrl}, G, H, {t: J, h: Ctrl}, {t: K, h: Shift}, {t: L, h: Alt}, {t: ;, h: GUI}, '''']
   - [SYSTEM, Z, X, C, V, B, DEL, LGUI, ESC, LCTRL, RGUI, RET, N, M, ',', ., /, SYSTEM]
-  - [{t: '&rgb_ug_status_macro', h: SYSTEM}, HOME, END, LEFT, RIGHT, '', {t: BSPC, h: NPAD}, {t: DEL, h: NAV}, {t: RET, h: DEVLEFT}, {t: SPACE, h: DEVLEFT}, Aero/Caps, UP, DOWN, '[', ']', PG DN]
+  - [{t: '&rgb_ug_status_macro', h: SYSTEM}, HOME, END, LEFT, RIGHT, {h: WM}, {t: BSPC, h: NPAD}, {t: DEL, h: NAV}, {t: RET, h: DEVLEFT}, {t: SPACE, h: DEVLEFT}, Aero/Caps, UP, DOWN, '[', ']', PG DN]
+  COLEMAK:
+  - [▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽]
+  - [▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽]
+  - [▽, Q, W, F, P, B, J, L, U, Y, ;, ▽]
+  - [▽, {t: A, h: GUI}, {t: R, h: Alt}, {t: S, h: Shift}, {t: T, h: Ctrl}, G, M, {t: N, h: Ctrl}, {t: E, h: Shift}, {t: I, h: Alt}, {t: O, h: GUI}, ▽]
+  - [▽, Z, X, C, D, V, ▽, ▽, ▽, ▽, ▽, ▽, K, H, ',', ., /, ▽]
+  - [▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽]
   DEVLEFT:
   - [▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽]
   - [▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽]
   - ['`', '!', '@', '%', '&', '?', '', '', '', '', '', '']
-  - ['#', ^, '=', _, $, '*', '', '', '', '', '', '']
+  - ['#', ^, '=', _, $, '*', '', ▽, ▽, ▽, ▽, '']
   - ['~', <, '|', '-', '>', '', ▽, ▽, ▽, ▽, ▽, ▽, '', '', '', '', '', '']
   - [▽, ▽, ▽, ▽, ▽, '', ▽, ▽, {type: held}, ▽, ▽, ▽, ▽, ▽, ▽, ▽]
   NPAD:
   - [▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽]
   - [▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽]
   - ['', '', '', PgUp, '', '', +, 7, 8, 9, '-', '|']
-  - [▽, '', HOME, PgDn, END, INSERT, _, {t: 4, h: RCTRL}, {t: 5, h: RALT}, {t: 6, h: RSHIFT}, {t: ':', h: RGUI}, '-']
+  - [▽, GUI, {t: HOME, h: Alt}, {t: PgDn, h: Shift}, {t: END, h: Ctrl}, INSERT, $, {t: 4, h: Ctrl}, {t: 5, h: Shift}, {t: 6, h: Alt}, {t: ':', h: GUI}, '-']
   - [▽, '', '', '', '', '', ▽, ▽, ▽, ▽, ▽, ▽, ',', 1, 2, 3, ., ENTER]
   - [▽, ▽, ▽, ▽, ▽, ▽, {type: held}, ▽, ▽, 0, 0, ▽, ▽, ▽, ▽, ▽]
   SYSTEM:
@@ -32,16 +39,24 @@ layers:
   - [▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽]
   - [▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽]
   - [F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11, F12]
-  - [▽, LGUI, LSHIFT, LALT, LCTRL, ▽, LEFT, DOWN, UP, RIGHT, '', '']
+  - [▽, GUI, Alt, Shift, Ctrl, ▽, LEFT, DOWN, UP, RIGHT, '', '']
   - [▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽, '', '', '', '', '', '']
   - [▽, ▽, ▽, ▽, ▽, '', ▽, {type: held}, ▽, '', '', ▽, ▽, ▽, ▽, '']
+  WM:
+  - ['', '', '', '', '', '', '', '', '', '']
+  - ['', '', '', '', '', '', '', '', '', '', '', '']
+  - ['', CLOSE, '', ws E, RESIZE, '', MOVE ←, MOVE ↓, MOVE ↑, MOVE →, '', LAYOUT]
+  - ['', ws A, ws S, ws D, FLOAT, '', FOCUS ←, FOCUS ↓, FOCUS ↑, FOCUS →, '', ORIENT]
+  - ['', ws Z, ws X, '', '', ws B, '', '', '', '', '', '', '', ws M, '', '', SHIFT, '']
+  - ['', '', '', '', '', {type: held}, '', '', FULL, SCRATCH, TAB ↔, '', '', '', '', '']
 combos:
-  - {p: [23, 24], k: '~', l: [BASE]}
-  - {p: [38, 37], k: '(', l: [BASE]}
-  - {p: [36, 37], k: '[', l: [BASE]}
-  - {p: [36, 38], k: '{', l: [BASE], a: top, o: -0.05}
-  - {p: [35, 36], k: '_', l: [BASE]}
-  - {p: [41, 42], k: ')', l: [BASE]}
-  - {p: [42, 43], k: ']', l: [BASE]}
-  - {p: [41, 43], k: '}', l: [BASE], a: top, o: -0.05}
-  - {p: [43, 44], k: '-', l: [BASE]}
+  - {p: [23, 24], k: '~', l: [BASE, COLEMAK]}
+  - {p: [38, 37], k: '(', l: [BASE, COLEMAK]}
+  - {p: [36, 37], k: '[', l: [BASE, COLEMAK]}
+  - {p: [36, 38], k: '{', l: [BASE, COLEMAK], a: top, o: -0.05}
+  - {p: [35, 36], k: '_', l: [BASE, COLEMAK]}
+  - {p: [41, 42], k: ')', l: [BASE, COLEMAK]}
+  - {p: [42, 43], k: ']', l: [BASE, COLEMAK]}
+  - {p: [41, 43], k: '}', l: [BASE, COLEMAK], a: top, o: -0.05}
+  - {p: [43, 44], k: '-', l: [BASE, COLEMAK]}
+  - {p: [69, 72], k: COLEMAK, l: [BASE, COLEMAK]}

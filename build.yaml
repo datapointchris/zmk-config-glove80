@@ -1,4 +1,12 @@
 ---
 include:
   - board: glove80_lh
+    cmake-args: -DDTS_EXTRA_CPPFLAGS=-DOS_MACOS
+    artifact-name: glove80_lh_macos
   - board: glove80_rh
+    cmake-args: -DDTS_EXTRA_CPPFLAGS=-DOS_MACOS
+    artifact-name: glove80_rh_macos
+  - board: glove80_lh
+    artifact-name: glove80_lh_linux
+  - board: glove80_rh
+    artifact-name: glove80_rh_linux

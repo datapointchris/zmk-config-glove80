@@ -13,11 +13,13 @@ ZMK firmware configuration for the MoErgo Glove80 ergonomic keyboard.
 
 | # | Layer | Notes |
 |---|---|---|
-| 0 | BASE | QWERTY + home row mods + 8 combos + number row + F-keys |
-| 1 | DEVLEFT | Programming symbols (left hand) |
-| 2 | NPAD | Number pad (right) + nav (left) |
-| 3 | SYSTEM | Bluetooth, RGB controls, bootloader, media |
-| 4 | NAV | Arrow keys + F1-F12 + sticky modifiers |
+| 0 | BASE | QWERTY + home row mods (GASC) + 9 combos + number row + F-keys |
+| 1 | COLEMAK | Colemak-DH alpha layout, toggle via inner thumb combo |
+| 2 | DEVLEFT | Programming symbols (left hand) |
+| 3 | NPAD | Number pad (right) + nav with HRMs (left) |
+| 4 | SYSTEM | Bluetooth, RGB controls, bootloader, media |
+| 5 | NAV | Arrow keys + F1-F12 + modifiers (GASC) |
+| 6 | WM | Window manager shortcuts (OS-conditional via WMK/WMSK) |
 
 ## Notable
 
