@@ -59,4 +59,4 @@ combos:
   - {p: [42, 43], k: ']', l: [BASE, COLEMAK]}
   - {p: [41, 43], k: '}', l: [BASE, COLEMAK], a: top, o: -0.05}
   - {p: [43, 44], k: '-', l: [BASE, COLEMAK]}
-  - {p: [69, 72], k: COLEMAK, l: [BASE, COLEMAK]}
+  - {p: [71, 72], k: COLEMAK, l: [BASE, COLEMAK]}

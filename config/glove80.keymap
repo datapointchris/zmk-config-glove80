@@ -102,7 +102,7 @@
         combo_colemak_toggle {
             timeout-ms = <50>;
             require-prior-idle-ms = <300>;
-            key-positions = <69 72>;  // Inner lower thumbs
+            key-positions = <71 72>;  // Inner lower thumbs
             layers = <BASE COLEMAK>;
             bindings = <&tog COLEMAK>;
         };
