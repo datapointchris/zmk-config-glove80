@@ -2,12 +2,7 @@ manifest:
   remotes:
     - name: moergo-sc
       url-base: https://github.com/moergo-sc
-    - name: datapointchris
-      url-base: https://github.com/datapointchris
   projects:
-    - name: zmk-shared
-      remote: datapointchris
-      revision: main
     - name: zmk
       remote: moergo-sc
       revision: main
