@@ -7,7 +7,7 @@ All ZMK repos live under `~/code/zmk/`. See `~/code/zmk/shared/CLAUDE.md` for sh
 ## Key Files
 
 | File | Purpose |
-|---|---|
+| --- | --- |
 | `config/glove80.keymap` | Keymap with 7 layers, combos, `magic` behavior, RGB macro |
 | `config/glove80.conf` | Minimal config (pointing + smooth scrolling) |
 | `config/west.yml` | West manifest — pulls zmk-shared + **MoErgo ZMK fork** |
