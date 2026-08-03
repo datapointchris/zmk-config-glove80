@@ -3,4 +3,8 @@ on: [push, pull_request, workflow_dispatch]
 
 jobs:
   build:
-    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+    # MoErgo's fork, matching config/west.yml — this board only exists there.
+    # Upstream's workflow on main assumes the Zephyr 4.1 board-variant scheme,
+    # so its compat check crashed on `west boards --format {qualifiers}`, a
+    # field the fork's older Zephyr has no attribute for.
+    uses: moergo-sc/zmk/.github/workflows/build-user-config.yml@main
