@@ -12,7 +12,7 @@ All ZMK repos live under `~/code/zmk/`. See `~/code/zmk/shared/CLAUDE.md` for sh
 | `config/glove80.conf` | Minimal config (pointing + smooth scrolling) |
 | `config/west.yml` | West manifest — pulls zmk-shared + **MoErgo ZMK fork** |
 | `build.yaml` | Build matrix: glove80_lh/rh × macOS/Linux (OS-conditional) |
-| `Makefile` | align, draw, build, sync, clean |
+| `Makefile` | Standard targets — see `~/code/zmk/shared/CLAUDE.md` |
 | `keymap_drawer.config.yaml` | Keymap-drawer config for this keyboard |
 | `keymap_align.toml` | Keymap-align config |
 
@@ -33,6 +33,11 @@ Uses all 7 shared layers: BASE (0), COLEMAK (1), DEVLEFT (2), NPAD (3), SYSTEM (
 - SYSTEM layer has full RGB controls (`RGB_EFF/EFR`, `RGB_HUI/HUD`, `RGB_SAI/SAD`, `RGB_BRI/BRD`, `RGB_TOG`)
 
 ## Guardrails
+
+See `~/code/zmk/shared/CLAUDE.md` guardrails for the universal rules — above all **rebuild
+firmware after every keymap change**, since the UF2 files are the deliverable and a source-only
+change ships nothing. The runtime-OS-switching rules do not apply here: Glove80 has no OS_MAC /
+WM_MAC layers. Board-specific:
 
 - **Must use MoErgo fork** — `west.yml` points to `moergo-sc/zmk`, not `zmkfirmware/zmk`. Changing this breaks the build.
 - Position numbering is completely different from 42-key boards — don't copy key positions between Glove80 and Corne/Piantor
