@@ -12,7 +12,6 @@ All ZMK repos live under `~/code/zmk/`. See `~/code/zmk/shared/CLAUDE.md` for sh
 | `config/glove80.conf` | Minimal config (pointing + smooth scrolling) |
 | `config/west.yml` | West manifest — pulls zmk-shared + **MoErgo ZMK fork** |
 | `build.yaml` | Build matrix: glove80_lh/rh × macOS/Linux (OS-conditional) |
-| `Makefile` | Standard targets — see `~/code/zmk/shared/CLAUDE.md` |
 | `keymap_drawer.config.yaml` | Keymap-drawer config for this keyboard |
 | `keymap_align.toml` | Keymap-align config |
 

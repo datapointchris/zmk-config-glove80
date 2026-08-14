@@ -33,9 +33,10 @@ ZMK firmware configuration for the MoErgo Glove80 ergonomic keyboard.
 ## Build
 
 ```sh
-make build    # Build firmware → glove80_lh.uf2, glove80_rh.uf2
-make sync     # Align + draw + build
-make help     # Show all targets
+zmk check     # What is missing or has drifted
+zmk sync      # Align + draw + build
+zmk flash     # Pick halves with fzf, then write each
+zmk --help    # Show all commands
 ```
 
 ## Ecosystem
