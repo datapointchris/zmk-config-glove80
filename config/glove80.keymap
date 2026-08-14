@@ -18,6 +18,16 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/mouse.h>
+
+// Layer indices. These must match the order of the blocks in `keymap` below.
+#define BASE 0
+#define COLEMAK 1
+#define DEVLEFT 2
+#define NPAD 3
+#define SYSTEM 4
+#define NAV 5
+#define WM 6
+
 #include "shared_behaviors.dtsi"
 
 / {
