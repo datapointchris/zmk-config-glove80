@@ -1,29 +1,16 @@
 # Glove80 AI Context
 
-## Ecosystem
-
-All ZMK repos live under `~/code/zmk/`. See `~/code/zmk/shared/CLAUDE.md` for shared behaviors, layer defines, and build tools.
-
-## Key Files
-
-| File | Purpose |
-| --- | --- |
-| `config/glove80.keymap` | Keymap with 7 layers, combos, `magic` behavior, RGB macro |
-| `config/glove80.conf` | Minimal config (pointing + smooth scrolling) |
-| `config/west.yml` | West manifest — pulls zmk-shared + **MoErgo ZMK fork** |
-| `build.yaml` | Build matrix: glove80_lh/rh × macOS/Linux (OS-conditional) |
-| `keymap_drawer.config.yaml` | Keymap-drawer config for this keyboard |
-| `keymap_align.toml` | Keymap-align config |
+Read `~/code/zmk/shared/CLAUDE.md` first: it holds the shared behaviors, the `zmk` build tool and the guardrails every board follows, and a session here does not load it.
 
 ## Keyboard Details
 
 - **80 keys**: non-sequential numbering across left/right halves
 - **Key groups**: `KEYS_L` (34 positions), `KEYS_R` (34 positions), `THUMBS_L` (54,53,52,71,70,69), `THUMBS_R` (55,56,57,72,73,74)
-- **ZMK source**: `moergo-sc/zmk@main` (MoErgo fork, NOT upstream)
+- **Two firmwares per half** — compile-time OS switching. `build.yaml` builds each half for Linux and again with `-DOS_MACOS` for macOS. There are no OS_MAC / WM_MAC layers, so the shared runtime-OS-switching guardrail does not apply.
 
-## Layers Used
+## Layers
 
-Uses all 7 shared layers: BASE (0), COLEMAK (1), DEVLEFT (2), NPAD (3), SYSTEM (4), NAV (5), WM (6).
+Seven layers: BASE (0), COLEMAK (1), DEVLEFT (2), NPAD (3), SYSTEM (4), NAV (5), WM (6).
 
 ## Glove80-Specific Behaviors
 
@@ -33,12 +20,7 @@ Uses all 7 shared layers: BASE (0), COLEMAK (1), DEVLEFT (2), NPAD (3), SYSTEM (
 
 ## Guardrails
 
-See `~/code/zmk/shared/CLAUDE.md` guardrails for the universal rules — above all **rebuild
-firmware after every keymap change**, since the UF2 files are the deliverable and a source-only
-change ships nothing. The runtime-OS-switching rules do not apply here: Glove80 has no OS_MAC /
-WM_MAC layers. Board-specific:
-
-- **Must use MoErgo fork** — `west.yml` points to `moergo-sc/zmk`, not `zmkfirmware/zmk`. Changing this breaks the build.
+- **Must use MoErgo fork** — `config/west.yml` points to `moergo-sc/zmk` at `main`, not `zmkfirmware/zmk`. Changing this breaks the build.
 - Position numbering is completely different from 42-key boards — don't copy key positions between Glove80 and Corne/Piantor
 - RGB behaviors (`&rgb_ug`) are only available with the MoErgo fork and Glove80 hardware
-- No separate half-specific `.conf` files — the single `glove80.conf` applies to both halves
+- No separate half-specific `.conf` files — the single `config/glove80.conf` applies to both halves
