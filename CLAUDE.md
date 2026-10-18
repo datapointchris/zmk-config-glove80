@@ -20,7 +20,7 @@ Seven layers: BASE (0), COLEMAK (1), DEVLEFT (2), NPAD (3), SYSTEM (4), NAV (5),
 
 ## Guardrails
 
-- **Must use MoErgo fork** — `config/west.yml` points to `moergo-sc/zmk` at `main`, not `zmkfirmware/zmk`. Changing this breaks the build.
+- **Must use MoErgo fork** — `config/west.yml` points to `moergo-sc/zmk` at `main`, not `zmkfirmware/zmk`. Upstream has the Glove80 boards too, but not `RGB_STATUS`, which the `magic` key binds. Changing this breaks the build.
 - Position numbering is completely different from 42-key boards — don't copy key positions between Glove80 and Corne/Piantor
 - RGB behaviors (`&rgb_ug`) are only available with the MoErgo fork and Glove80 hardware
 - No separate half-specific `.conf` files — the single `config/glove80.conf` applies to both halves
