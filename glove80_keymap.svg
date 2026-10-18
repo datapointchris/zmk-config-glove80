@@ -461,7 +461,7 @@ path.combo { stroke-width: 3;}
 </a></g>
 <g transform="translate(1239, 620) rotate(-20.0)" class="key keypos-74">
 <rect rx="6" ry="6" x="-48" y="-48" width="96" height="96" class="key"/>
-<text x="0" y="0" class="key tap">Aero/Caps</text>
+<text x="0" y="0" class="key tap">CAPS</text>
 </g>
 <g transform="translate(1350, 550)" class="key keypos-75">
 <rect rx="6" ry="6" x="-48" y="-48" width="96" height="96" class="key"/>

@@ -6,7 +6,7 @@ layers:
   - [TAB, Q, W, E, R, T, Y, U, I, O, P, \]
   - [ESC, {t: A, h: GUI}, {t: S, h: Alt}, {t: D, h: Shift}, {t: F, h: Ctrl}, G, H, {t: J, h: Ctrl}, {t: K, h: Shift}, {t: L, h: Alt}, {t: ;, h: GUI}, '''']
   - [SYSTEM, Z, X, C, V, B, DEL, LGUI, ESC, LCTRL, RGUI, RET, N, M, ',', ., /, SYSTEM]
-  - [{t: '&rgb_ug_status_macro', h: SYSTEM}, HOME, END, LEFT, RIGHT, {h: WM}, {t: BSPC, h: NPAD}, {t: DEL, h: NAV}, {t: RET, h: DEVLEFT}, {t: SPACE, h: DEVLEFT}, Aero/Caps, UP, DOWN, '[', ']', PG DN]
+  - [{t: '&rgb_ug_status_macro', h: SYSTEM}, HOME, END, LEFT, RIGHT, {h: WM}, {t: BSPC, h: NPAD}, {t: DEL, h: NAV}, {t: RET, h: DEVLEFT}, {t: SPACE, h: DEVLEFT}, CAPS, UP, DOWN, '[', ']', PG DN]
   COLEMAK:
   - [▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽]
   - [▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽, ▽]
