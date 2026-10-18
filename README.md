@@ -133,13 +133,14 @@ redraws from the YAML without checking it.
 `zmk clean` is the heavier reset. It deletes this repo's whole west workspace, and the next build
 fetches it again.
 
-## The MoErgo fork — the Glove80 board exists nowhere else
+## The MoErgo fork — `RGB_STATUS` exists nowhere else
 
-`config/west.yml` pins `moergo-sc/zmk` at `main` rather than upstream `zmkfirmware/zmk`. The
-`glove80_lh` and `glove80_rh` boards are defined only in that fork. Pointing the manifest at
-upstream breaks the build.
+`config/west.yml` pins `moergo-sc/zmk` at `main` rather than upstream `zmkfirmware/zmk`. Upstream
+defines the `glove80_lh` and `glove80_rh` boards too. The fork is kept for `RGB_STATUS`, the
+underglow status overlay the `magic` key taps. Upstream has no such behavior, so the keymap does
+not build against it.
 
-CI calls MoErgo's reusable workflow for the same reason. Upstream's workflow on `main` assumes
+CI calls MoErgo's reusable workflow to match the fork. Upstream's workflow on `main` assumes
 Zephyr 4.1's board-variant scheme. Its compatibility check asks `west boards` for a `{qualifiers}`
 field the fork's older Zephyr does not have.
 
