@@ -85,7 +85,7 @@ them as its trigger positions. A 42-key board's positions do not carry over.
 
 A layer's number comes from where its block sits in `keymap`. The `#define` at the top only names
 that number. A layer inserted anywhere but last leaves every later define pointing at the wrong
-block. Nothing errors.
+block. The firmware still builds, and each key opens the layer that now sits at its old number.
 
 ## Two firmwares per half — the OS is fixed when the firmware is built
 
@@ -103,7 +103,7 @@ Two WM keys call `LG()` directly, so they send GUI on both builds: the keys draw
 and SCRATCH (`LG(GRAVE)`). On macOS the close key is Cmd+Q.
 
 The other boards that include zmk-shared switch OS at runtime through conditional layers. This
-keymap has no `OS_MAC_LAYER`, so none of that applies here.
+keymap has no `OS_MAC_LAYER`, so no key here changes OS.
 
 ## Building — local builds see `../shared` live; CI sees only what is pushed
 
