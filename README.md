@@ -74,9 +74,10 @@ the underglow: each half's battery, the active layers, the Bluetooth profiles, t
 and the lock keys. That overlay is `RGB_STATUS`, which exists only in MoErgo's fork.
 
 The combos fire on BASE and COLEMAK alike. They are bound to positions, so they stay on the same
-physical keys under either layout. Adjacent home-row pairs type brackets: S+D `[`, D+F `(`, S+F
-`{`, then J+K `)`, K+L `]`, J+L `}`. A+S types `_`, L+; types `-`, and Q+W types `~`. Each combo
-needs 150 ms of idle before it, so a pair pressed mid-word types both letters.
+physical keys under either layout. Adjacent home-row pairs type brackets, and a few other pairs
+type symbols. The `combos` block in `config/glove80.keymap` lists every pair, with a comment naming
+its two keys, and the drawing shows them. Each combo sets `require-prior-idle-ms`, so a pair pressed
+mid-word types both letters.
 
 Key positions follow the Glove80's own numbering, which is not sequential across the halves.
 `KEYS_L`, `KEYS_R`, `THUMBS_L` and `THUMBS_R` at the top of the keymap list them per hand. They
