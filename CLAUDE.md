@@ -1,26 +1,13 @@
 # Glove80 AI Context
 
-Read `~/code/zmk/shared/CLAUDE.md` first: it holds the shared behaviors, the `zmk` build tool and the guardrails every board follows, and a session here does not load it.
+Read `../shared/CLAUDE.md` (zmk-shared, cloned beside this repo as `shared`) first: it holds the shared behaviors, the `zmk` build tool and the guardrails every board follows, and a session here does not load it.
 
-## Keyboard Details
-
-- **80 keys**: non-sequential numbering across left/right halves
-- **Key groups**: `KEYS_L` (34 positions), `KEYS_R` (34 positions), `THUMBS_L` (54,53,52,71,70,69), `THUMBS_R` (55,56,57,72,73,74)
-- **Two firmwares per half** — compile-time OS switching. `build.yaml` builds each half for Linux and again with `-DOS_MACOS` for macOS. There are no OS_MAC / WM_MAC layers, so the shared runtime-OS-switching guardrail does not apply.
-
-## Layers
-
-Seven layers: BASE (0), COLEMAK (1), DEVLEFT (2), NPAD (3), SYSTEM (4), NAV (5), WM (6).
-
-## Glove80-Specific Behaviors
-
-- `magic`: hold-tap — hold=`&mo SYSTEM`, tap=`&rgb_ug_status_macro`
-- `rgb_ug_status_macro`: triggers `&rgb_ug RGB_STATUS`
-- SYSTEM layer has full RGB controls (`RGB_EFF/EFR`, `RGB_HUI/HUD`, `RGB_SAI/SAD`, `RGB_BRI/BRD`, `RGB_TOG`)
+`README.md` is the reference for this board: the layer table, the combos, the two firmwares per half and the MoErgo fork. `config/glove80.keymap` holds the values. This file keeps only the constraints a change must not break.
 
 ## Guardrails
 
-- **Must use MoErgo fork** — `config/west.yml` points to `moergo-sc/zmk` at `main`, not `zmkfirmware/zmk`. Upstream has the Glove80 boards too, but not `RGB_STATUS`, which the `magic` key binds. Changing this breaks the build.
-- Position numbering is completely different from 42-key boards — don't copy key positions between Glove80 and Corne/Piantor
-- RGB behaviors (`&rgb_ug`) are only available with the MoErgo fork and Glove80 hardware
-- No separate half-specific `.conf` files — the single `config/glove80.conf` applies to both halves
+- **Key positions are the Glove80's own, not sequential across halves.** `KEYS_L`, `KEYS_R`, `THUMBS_L` and `THUMBS_R` at the top of `config/glove80.keymap` list them. Never copy positions between this board and Corne/Piantor.
+- **A layer's number is its block's position in `keymap`.** The `#define`s at the top only name it, so a new layer goes last. README § "Layers" has the table.
+- **The OS is fixed at build time, not switched at runtime.** There are no OS_MAC / WM_MAC layers, so the shared runtime-OS-switching guardrail does not apply. README § "Two firmwares per half" says how `build.yaml` builds both.
+- **Must use the MoErgo fork.** `config/west.yml` points at `moergo-sc/zmk`, because the `magic` key binds `RGB_STATUS` and only the fork has it. Changing this breaks the build. README § "The MoErgo fork" has the reason in full.
+- **One `.conf` for both halves.** `config/glove80.conf` applies to each, so no half-specific `.conf` files exist.
